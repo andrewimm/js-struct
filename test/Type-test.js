@@ -78,7 +78,13 @@ suite('Type', () => {
   });
 
   test('arrays', () => {
-    let t = Type.array(Type.uint8, 4)('bytes');
+    let t = Type.array(Type.uint8, 4);
+    expect(t.size).to.equal(4);
+    expect(t.read(arr, 0)).to.deep.equal(
+      [0x03, 0xff, 0x80, 0x00]
+    );
+
+    t = Type.array(Type.uint8, 4)('bytes');
     expect(t.size).to.equal(4);
     expect(t.field).to.equal('bytes');
     expect(t.read(arr, 0)).to.deep.equal(
