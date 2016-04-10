@@ -72,7 +72,7 @@ suite('Type', () => {
   test('char', () => {
     let t = Type.char('ch');
     expect(t.field).to.equal('ch');
-    expect(t.size).to.equal(4);
+    expect(t.size).to.equal(1);
     expect(t.read(arr, 5)).to.equal('N');
     expect(t.read(arr, 6)).to.equal('0');
   });
