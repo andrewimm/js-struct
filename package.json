@@ -3,6 +3,10 @@
   "version": "1.2.0",
   "description": "C-like structs for accessing byte arrays",
   "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewimm/js-struct"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
