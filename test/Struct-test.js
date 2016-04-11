@@ -68,4 +68,17 @@ suite('Struct', () => {
       c: 128
     });
   });
+
+  test('padding', () => {
+    let s = Struct([
+      Type.uint8('a'),
+      Type.uint16, // padding
+      Type.uint8('b'),
+    ]);
+    expect(s.size).to.equal(4);
+    expect(s.read(arr, 0)).to.deep.equal({
+      a: 3,
+      b: 0,
+    });
+  });
 });
